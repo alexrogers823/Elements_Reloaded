@@ -8,12 +8,12 @@ namespace Elements_Reloaded
         {
             Test sample = new Test();
 
-            Player john = new Player("fire", 20, false, "weapon");
+            Player john = new Player("John", "fire", false, "weapon");
+            Hero sam = new Hero("Sam", "fire", false,
+                        "weapon", 30, "basic attack");
 
             Console.WriteLine(sample.testMessage());
-            Console.WriteLine(john.GetLP());
-            john.TakeDamage(5);
-            Console.WriteLine(john.GetLP());
+            sam.ShowGameStats();
         }
     }
 }
