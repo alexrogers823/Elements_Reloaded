@@ -19,7 +19,7 @@ namespace Elements_Reloaded
 
         public void PrintItems()
         {
-            foreach(string item in _inventory)
+            foreach (string item in _inventory)
             {
                 Console.WriteLine(item);
             }

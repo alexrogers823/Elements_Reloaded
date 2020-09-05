@@ -6,6 +6,7 @@ namespace Elements_Reloaded
         private int _magicPoints { get; set; } = 50;
         private int _attackPoints;
         private string _basicAttack;
+        private Inventory _inventory { get; } = new Inventory();
         protected override int LifePoints { get; set; } = 100;
         protected override int WeaponBaseDamage { get; set; }
 
@@ -24,6 +25,13 @@ namespace Elements_Reloaded
             Console.WriteLine(
                 $"{this.Name}: {this.ElementType} Type," +
                 $" {this.LifePoints}, {this._magicPoints}");
+        }
+
+        public void AcquireItem(string item)
+        {
+            _inventory.AddItem(item);
+            Console.WriteLine($"Added {item} to {this.Name}'s inventory");
+            _inventory.PrintItems();
         }
     }
 }

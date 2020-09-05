@@ -11,6 +11,9 @@ namespace Elements_Reloaded
             Hero sam = new Hero("Sam", "fire", false,
                         "weapon", 30, "basic attack");
 
+            Hero jane = new Hero("Jane", "earth", false,
+                        "slam", 30, "rock");
+
             Enemy steve = new Enemy("Steve", "water", false, "Water Whip");
 
             Console.WriteLine(sample.testMessage());
@@ -18,9 +21,8 @@ namespace Elements_Reloaded
 
             steve.ShowGameStats();
 
-            Inventory sampleList = new Inventory();
-            sampleList.AddItem("sample item");
-            sampleList.PrintItems();
+            sam.AcquireItem("strawberry");
+            jane.AcquireItem("stone");
         }
     }
 }
