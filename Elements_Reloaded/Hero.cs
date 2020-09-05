@@ -7,7 +7,8 @@ namespace Elements_Reloaded
         private int _attackPoints;
         private string _basicAttack;
         protected override int LifePoints { get; set; } = 100;
-        
+        protected override int WeaponBaseDamage { get; set; }
+
         public Hero(string name, string elementType,
             bool hasWeapon, string weaponAttack,
             int attackPoints, string basicAttack
@@ -18,7 +19,7 @@ namespace Elements_Reloaded
             _basicAttack = basicAttack;
         }
 
-        public void ShowGameStats()
+        public override void ShowGameStats()
         {
             Console.WriteLine(
                 $"{this.Name}: {this.ElementType} Type," +

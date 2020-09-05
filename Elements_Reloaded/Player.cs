@@ -1,13 +1,14 @@
 ﻿using System;
 namespace Elements_Reloaded
 {
-    public class Player
+    public abstract class Player
     {
         protected string Name;
         protected string ElementType;
         protected virtual int LifePoints { get; set; }
         protected bool HasWeapon;
         protected string WeaponAttack;
+        protected virtual int WeaponBaseDamage { get; set; }
 
         public Player(string name, string elementType,
             bool hasWeapon, string weaponAttack)
@@ -26,6 +27,13 @@ namespace Elements_Reloaded
         public int GetLP()
         {
             return LifePoints;
+        }
+
+        public virtual void ShowGameStats()
+        {
+            Console.WriteLine(
+                $"{this.Name}: {this.ElementType} Type," +
+                $" {this.LifePoints}");
         }
     }
 }

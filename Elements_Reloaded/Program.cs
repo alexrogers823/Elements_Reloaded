@@ -8,12 +8,15 @@ namespace Elements_Reloaded
         {
             Test sample = new Test();
 
-            Player john = new Player("John", "fire", false, "weapon");
             Hero sam = new Hero("Sam", "fire", false,
                         "weapon", 30, "basic attack");
 
+            Enemy steve = new Enemy("Steve", "water", false, "Water Whip");
+
             Console.WriteLine(sample.testMessage());
             sam.ShowGameStats();
+
+            steve.ShowGameStats();
         }
     }
 }
