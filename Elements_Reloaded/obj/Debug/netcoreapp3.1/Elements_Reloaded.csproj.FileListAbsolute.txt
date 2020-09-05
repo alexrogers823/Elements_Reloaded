@@ -3,7 +3,6 @@
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/bin/Debug/netcoreapp3.1/Elements_Reloaded.runtimeconfig.dev.json
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/bin/Debug/netcoreapp3.1/Elements_Reloaded.dll
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/bin/Debug/netcoreapp3.1/Elements_Reloaded.pdb
-/Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/obj/Debug/netcoreapp3.1/Elements_Reloaded.csprojAssemblyReference.cache
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/obj/Debug/netcoreapp3.1/Elements_Reloaded.AssemblyInfoInputs.cache
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/obj/Debug/netcoreapp3.1/Elements_Reloaded.AssemblyInfo.cs
 /Users/alexrogers/Documents/CSharp_Projects/Elements_Reloaded/Elements_Reloaded/obj/Debug/netcoreapp3.1/Elements_Reloaded.csproj.CoreCompileInputs.cache

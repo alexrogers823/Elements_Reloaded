@@ -17,6 +17,10 @@ namespace Elements_Reloaded
             sam.ShowGameStats();
 
             steve.ShowGameStats();
+
+            Inventory sampleList = new Inventory();
+            sampleList.AddItem("sample item");
+            sampleList.PrintItems();
         }
     }
 }
