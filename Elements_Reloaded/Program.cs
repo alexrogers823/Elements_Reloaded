@@ -8,21 +8,27 @@ namespace Elements_Reloaded
         {
             Test sample = new Test();
 
-            Hero sam = new Hero("Sam", "fire", false,
-                        "weapon", 30, "basic attack");
+            Hero sam = new Hero("Sam", "Fire");
 
-            Hero jane = new Hero("Jane", "earth", false,
-                        "slam", 30, "rock");
+            Hero jane = new Hero("Jane", "Earth");
 
-            Enemy steve = new Enemy("Steve", "water", false, "Water Whip");
+            Enemy steve = new Enemy("Steve", "Water");
 
-            Console.WriteLine(sample.testMessage());
+            //Console.WriteLine(sample.testMessage());
             sam.ShowGameStats();
+            jane.ShowGameStats();
+
+            sam.AcquireWeapon();
+            sam.TakeDamage(15);
+            sam.ShowGameStats();
+            jane.ShowGameStats();
 
             steve.ShowGameStats();
 
             sam.AcquireItem("strawberry");
             jane.AcquireItem("stone");
+
+            sam.Attack();
         }
     }
 }

@@ -5,17 +5,20 @@ namespace Elements_Reloaded
     {
         protected string Name;
         protected string ElementType;
-        protected virtual int LifePoints { get; set; }
-        protected bool HasWeapon { get; set; }
+        protected int LifePoints { get; set; }
+        protected bool HasWeapon { get; set; } = false;
         protected string WeaponAttack;
         protected virtual int WeaponBaseDamage { get; set; }
 
-        public Player(string name, string elementType,
-            string weaponAttack)
+        public Player(string name, string elementType)
         {
             Name = name;
             ElementType = elementType;
-            WeaponAttack = weaponAttack;
+        }
+
+        public void Attack(string attack)
+        {
+            Console.WriteLine($"{this.Name} attacks with {attack}!");
         }
 
         public void TakeDamage(int damage)
