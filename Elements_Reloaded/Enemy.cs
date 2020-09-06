@@ -10,8 +10,8 @@ namespace Elements_Reloaded
         protected override int LifePoints { get; set; } = 70;
 
         public Enemy(string name, string elementType,
-            bool hasWeapon, string weaponAttack
-            ) : base(name, elementType, hasWeapon, weaponAttack)
+            string weaponAttack
+            ) : base(name, elementType, weaponAttack)
         {
         }
     }

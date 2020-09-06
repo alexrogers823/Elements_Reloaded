@@ -6,16 +6,15 @@ namespace Elements_Reloaded
         protected string Name;
         protected string ElementType;
         protected virtual int LifePoints { get; set; }
-        protected bool HasWeapon;
+        protected bool HasWeapon { get; set; }
         protected string WeaponAttack;
         protected virtual int WeaponBaseDamage { get; set; }
 
         public Player(string name, string elementType,
-            bool hasWeapon, string weaponAttack)
+            string weaponAttack)
         {
             Name = name;
             ElementType = elementType;
-            HasWeapon = hasWeapon;
             WeaponAttack = weaponAttack;
         }
 

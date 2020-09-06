@@ -7,17 +7,18 @@ namespace Elements_Reloaded
         private int _attackPoints;
         private string _basicAttack;
         private Inventory _inventory { get; } = new Inventory();
+        protected bool HasWeapon { get; set; } = false;
         protected override int LifePoints { get; set; } = 100;
         protected override int WeaponBaseDamage { get; set; }
         //variable for base damange absorption (elemental stone)
 
         public Hero(string name, string elementType,
-            bool hasWeapon, string weaponAttack,
-            int attackPoints, string basicAttack
+            string weaponAttack,
+            string basicAttack
             ) : base(name, elementType,
-                hasWeapon, weaponAttack)
+                weaponAttack)
         {
-            _attackPoints = attackPoints;
+            _attackPoints = 10;
             _basicAttack = basicAttack;
         }
 
