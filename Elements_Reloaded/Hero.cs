@@ -9,6 +9,7 @@ namespace Elements_Reloaded
         private Inventory _inventory { get; } = new Inventory();
         protected override int LifePoints { get; set; } = 100;
         protected override int WeaponBaseDamage { get; set; }
+        //variable for base damange absorption (elemental stone)
 
         public Hero(string name, string elementType,
             bool hasWeapon, string weaponAttack,
