@@ -3,7 +3,7 @@ namespace Elements_Reloaded
 {
     public abstract class Player
     {
-        protected string Name;
+        public string Name { get; protected set; }
         protected string ElementType;
         protected int LifePoints { get; set; }
         protected bool HasWeapon { get; set; } = false;
