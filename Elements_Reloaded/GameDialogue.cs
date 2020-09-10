@@ -5,22 +5,22 @@ namespace Elements_Reloaded
 {
     public static class GameDialogue
     {
-        private static readonly string[] _levelOrder = ArrangeLevels();
+        private static readonly string[] _levelOrder = GameController.ArrangeLevels();
 
         public static string GetLevelName(int level)
         {
             Dictionary<int, string> LevelNames =
                 new Dictionary<int, string>
                 {
-                    { 1, "test" },
-                    { 2, "test" },
-                    { 3, "test" },
-                    { 4, "test" },
-                    { 5, "test" },
-                    { 6, "test" },
-                    { 7, "test" },
+                    { 1, _levelOrder[0] },
+                    { 2, _levelOrder[1] },
+                    { 3, _levelOrder[2] },
+                    { 4, _levelOrder[3] },
+                    { 5, _levelOrder[4] },
+                    { 6, _levelOrder[5] },
+                    { 7, _levelOrder[6] },
                     { 8, "Lightning Tower" },
-                    { 9, "test" },
+                    { 9, _levelOrder[7] },
                     { 10, "Element Dimension" },
                 };
 
@@ -73,14 +73,37 @@ namespace Elements_Reloaded
                 " there. Then it went away. 'What was that?' said the hero. Could I be getting" +
                 " closer to the source? Will I be victorious soon?' The presence returned, this " +
                 "time saying... 'ultimate power...'",
+
+                "'Man, this feels weird' {} stated. They were getting closer to a force they had" +
+                " never encounted. It was clear that they were getting closer to the source of it" +
+                " all. As the horizon became more clear, {} saw a large tower. It looked as if " +
+                "sparks randomly surrounded it. 'I don't know what element habits this place' the " +
+                "warrior said, 'but it can't be good...'",
+
+                "The two bosses began to merge into one! " +
+                "With both elements changed, this new monster emitted jolts of lightning!",
+
+                "'MERE MORTAL' it said, 'YOU WILL SUBMIT TO THE ULTIMATE POWER!' {} was ready to " +
+                "fight back. 'Who are you?' they replied. 'And why are you here?' 'I AM ELEMATRIX' " +
+                "shouted the voice, 'AND YOU WILL LEARN TO OBEY ME!' 'I will never let you rule!' " +
+                "{} shouted. 'I will save my friends and restore humanity!' 'IF YOU WILL NOT COME " +
+                "WILLINGLY...THEN I SHALL SEND AN ARMY OF YOUR WEKANESS AT YOU. HAHAHA...'",
+
+                "'Show yourself!' {} cried out to Elematrix. 'I will defeat you and save the world!' " +
+                "'IS THAT SO?' Elematrix replied. 'YOU WISH TO BE DEFEATED SO SOON?' The hero was not " +
+                "in th mood for games. 'You will face me! Right here, right now!' It was at that point " +
+                "that the world around {} began to change... The sky darkened, the water disappeared, and " +
+                "the ground shifted to something unknown. Alone and confused, {} yelled 'What is going on?!? " +
+                "Where am I? Answer me!' 'IF YOU WANT TO FACE ME, YOU WILL DO SO ON MY FIELD' Elematrix " +
+                "answered. 'BUT FIRST...I WILL THROW EVERY TYPE OF ELEMENT YOUR WAY. AND IF YOU SURVIVE, " +
+                "I'LL BE GLAD TO ANNIHILATE YOU MYSELF!'",
+
+                "All of the sudden, the elements go wild... " +
+                "A strange anomoly appears, and it looks...so...menacing! " +
+                "'It's time...to fight...ELEMATRIX!"
             };
 
             return IntroDialogue[level-1];
-        }
-
-        public static string ArrangeLevels(string elementType)
-        {
-
         }
     }
 }

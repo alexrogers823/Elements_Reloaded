@@ -11,8 +11,9 @@ namespace Elements_Reloaded
         {
         }
 
-        private void _intoduceLevel()
+        private void _introduceLevel(int level)
         {
+            GameDialogue.GetLevelIntro(level);
         }
 
         private void _sendBoss()
