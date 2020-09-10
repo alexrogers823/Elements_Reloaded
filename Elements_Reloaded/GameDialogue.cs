@@ -65,7 +65,14 @@ namespace Elements_Reloaded
                 "{} hadn't truly realized how many people were corrupted by this dark spirit." +
                 "It was clear that the people of this world needed help to overcome this. But {}" +
                 "still wondered, was why this was still happening? Then, just over the hill, " +
-                "a raged man charged at the hero..."
+                "a raged man charged at the hero...",
+
+                "Now, more determined than ever, {} traversed faster, hoping the answer lie " +
+                "ahead. They were emotionally weakened by witnessing what the darkness had done" +
+                " to their friends. Suddenly, {} felt a strong force. A presence, distant but " +
+                " there. Then it went away. 'What was that?' said the hero. Could I be getting" +
+                " closer to the source? Will I be victorious soon?' The presence returned, this " +
+                "time saying... 'ultimate power...'",
             };
 
             return IntroDialogue[level-1];
