@@ -75,5 +75,21 @@ namespace Elements_Reloaded
             return LevelOrderList.ToArray();
         }
 
+        public static Hero CreateHero()
+        {
+            string[] ElementChoices = new string[4] { "Water", "Earth", "Fire", "Air" };
+            Console.WriteLine("Create your hero. Choose wisely");
+
+            Console.WriteLine("Which element type do you want to play as?");
+            string SelectedElement = Console.ReadLine();
+
+            Console.WriteLine("Your hero needs a name...");
+            string Name = Console.ReadLine();
+
+            Console.WriteLine($"Creating hero {Name}...");
+
+            return new Hero(Name, SelectedElement);
+        }
+
     }     
 }

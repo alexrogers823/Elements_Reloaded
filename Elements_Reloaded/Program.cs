@@ -6,36 +6,42 @@ namespace Elements_Reloaded
     {
         static void Main(string[] args)
         {
-            Test sample = new Test();
+            //Test sample = new Test();
 
-            Hero sam = new Hero("Sam", "Fire");
+            //Hero sam = new Hero("Sam", "Fire");
 
-            Hero jane = new Hero("Jane", "Earth");
+            //Hero jane = new Hero("Jane", "Earth");
 
-            Enemy steve = new Enemy("Steve", "Water");
+            //Enemy steve = new Enemy("Steve", "Water");
 
-            //Console.WriteLine(sample.testMessage());
-            sam.ShowGameStats();
-            jane.ShowGameStats();
+            ////Console.WriteLine(sample.testMessage());
+            //sam.ShowGameStats();
+            //jane.ShowGameStats();
 
-            sam.AcquireWeapon();
-            sam.TakeDamage(15);
-            sam.ShowGameStats();
-            jane.ShowGameStats();
+            //sam.AcquireWeapon();
+            //sam.TakeDamage(15);
+            //sam.ShowGameStats();
+            //jane.ShowGameStats();
 
-            steve.ShowGameStats();
+            //steve.ShowGameStats();
 
-            sam.AcquireItem("strawberry");
-            jane.AcquireItem("stone");
+            //sam.AcquireItem("strawberry");
+            //jane.AcquireItem("stone");
 
-            sam.Attack();
+            //sam.Attack();
 
-            string[] levels = GameController.ArrangeLevels("Fire");
+            //string[] levels = GameController.ArrangeLevels("Fire");
 
-            foreach (string level in levels)
-            {
-                Console.WriteLine(level);
-            }
+            //foreach (string level in levels)
+            //{
+            //    Console.WriteLine(level);
+            //}
+
+            Hero hero = GameController.CreateHero();
+            hero.ShowGameStats();
+            hero.TakeDamage(15);
+            hero.AcquireItem("peach");
+            hero.Attack();
         }
     }
 }
