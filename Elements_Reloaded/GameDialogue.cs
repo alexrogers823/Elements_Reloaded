@@ -5,7 +5,7 @@ namespace Elements_Reloaded
 {
     public static class GameDialogue
     {
-        private static readonly string[] _levelOrder = GameController.ArrangeLevels();
+        private static readonly string[] _levelOrder = GameController.ArrangeLevels("Water");
 
         public static string GetLevelName(int level)
         {

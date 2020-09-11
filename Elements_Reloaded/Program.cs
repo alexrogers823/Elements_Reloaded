@@ -29,6 +29,13 @@ namespace Elements_Reloaded
             jane.AcquireItem("stone");
 
             sam.Attack();
+
+            string[] levels = GameController.ArrangeLevels("Fire");
+
+            foreach (string level in levels)
+            {
+                Console.WriteLine(level);
+            }
         }
     }
 }
