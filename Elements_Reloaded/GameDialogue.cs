@@ -6,6 +6,7 @@ namespace Elements_Reloaded
     public static class GameDialogue
     {
         private static readonly string[] _levelOrder = GameController.ArrangeLevels("Water");
+        private static readonly Random random = new Random();
 
         public static string GetLevelName(int level)
         {
@@ -25,6 +26,22 @@ namespace Elements_Reloaded
                 };
 
             return LevelNames[level];
+        }
+
+        public static string GetEnemyIntro()
+        {
+            int Index = random.Next(6);
+            string[] Introductions = new string[6]
+            {
+                "A {} stands in your way! Prepare for battle!",
+                "Your path is being blocked by a {}! Can you take him?",
+                "Look here, a {} is sizing you up! Kill them",
+                "You've stumbled across a {}, and he looks dangerous!",
+                "All of a sudden a {} approaches! Stand your ground!",
+                "You're face to face with a {}! And he's out for blood"
+            };
+
+            return Introductions[Index];
         }
 
         public static string GetLevelIntro(int level)
