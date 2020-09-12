@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Elements_Reloaded
 {
-    public static class GameController
+    public class GameController
     {
         private static readonly Dictionary<string, Dictionary<string, string[]>> _elementMap =
             new Dictionary<string, Dictionary<string, string[]>>
@@ -41,6 +41,11 @@ namespace Elements_Reloaded
                     }
                 }
             };
+
+        public static string GetEnemyName(string elementType, bool isBoss)
+        {
+            return _elementMap[elementType]["Enemies"][figure out this index];
+        }
 
 
         public static string[] ArrangeLevels(string elementType)
