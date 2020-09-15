@@ -5,7 +5,7 @@ namespace Elements_Reloaded
     {
         public string Name { get; protected set; }
         protected string ElementType;
-        protected int LifePoints { get; set; }
+        public int LifePoints { get; protected set; }
         protected bool HasWeapon { get; set; } = false;
         protected string WeaponAttack;
         protected virtual int WeaponBaseDamage { get; set; }

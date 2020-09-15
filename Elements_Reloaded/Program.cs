@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Elements_Reloaded
 {
@@ -6,42 +7,19 @@ namespace Elements_Reloaded
     {
         static void Main(string[] args)
         {
-            //Test sample = new Test();
+            //Hero hero = GameController.CreateHero();
+            //hero.ShowGameStats();
+            //hero.TakeDamage(15);
+            //hero.AcquireItem("peach");
+            //hero.Attack();
 
-            //Hero sam = new Hero("Sam", "Fire");
+            Console.WriteLine(String.Format("{0} ELEMENTS {0}", String.Concat(Enumerable.Repeat("-", 10))));
+            Console.WriteLine("An RPG game on the four powers of life");
 
-            //Hero jane = new Hero("Jane", "Earth");
+            Gameplay.Start();
 
-            //Enemy steve = new Enemy("Steve", "Water");
+            Level level = new Level(hero);
 
-            ////Console.WriteLine(sample.testMessage());
-            //sam.ShowGameStats();
-            //jane.ShowGameStats();
-
-            //sam.AcquireWeapon();
-            //sam.TakeDamage(15);
-            //sam.ShowGameStats();
-            //jane.ShowGameStats();
-
-            //steve.ShowGameStats();
-
-            //sam.AcquireItem("strawberry");
-            //jane.AcquireItem("stone");
-
-            //sam.Attack();
-
-            //string[] levels = GameController.ArrangeLevels("Fire");
-
-            //foreach (string level in levels)
-            //{
-            //    Console.WriteLine(level);
-            //}
-
-            Hero hero = GameController.CreateHero();
-            hero.ShowGameStats();
-            hero.TakeDamage(15);
-            hero.AcquireItem("peach");
-            hero.Attack();
         }
     }
 }
