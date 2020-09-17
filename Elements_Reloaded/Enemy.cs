@@ -21,5 +21,21 @@ namespace Elements_Reloaded
             IsBoss = isBoss;
             LifePoints = isBoss ? 100 : 70;
         }
+
+        private object[] _getRandomAttack()
+        {
+            object[][] AttackList = new object[2][];
+            AttackList[0] = new object[2] { LowAttack, LowBaseDamage };
+            AttackList[1] = new object[2] { HighAttack, HighBaseDamage };
+
+            int RandIndex = new Random().Next(AttackList.Length);
+            return AttackList[RandIndex];
+        }
+
+        public int Attack()
+        {
+            object[] selectedAttack = _getRandomAttack();
+            base.Attack((string)selectedAttack[0]);
+            return (int)selectedAttack[1];
     }
 }
