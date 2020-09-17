@@ -48,10 +48,11 @@ namespace Elements_Reloaded
             HasWeapon = true;
         }
 
-        public void Attack()
+        public int Attack()
         {
             string selectedAttack = this._basicAttack;
             base.Attack(selectedAttack);
+            return _attackPoints;
         }
 
         public void DefeatEnemy(Enemy enemy)
