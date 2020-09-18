@@ -5,7 +5,7 @@ namespace Elements_Reloaded
     {
         
         public static int NumberOfEnemies { get; set; } = 5;
-        private static string _levelElement = "Fire";
+        private static string _levelElement { get; set; }
 
         public Level()
         {
@@ -13,8 +13,9 @@ namespace Elements_Reloaded
 
         public static void PlayLevel(int level)
         {
-            int i = 0;
+            _setLevelElement();
             string LevelName = GameDialogue.GetLevelName(level);
+            int i = 0;
 
             _introduceLevel();
 
@@ -43,6 +44,11 @@ namespace Elements_Reloaded
             // check if hero died. if so, end game. If not, clear level
 
             _clearLevel();
+        }
+
+        private static void _setLevelElement()
+        {
+            _levelElement = Gameplay.GetLevelElement();
         }
 
         private static void _introduceLevel()

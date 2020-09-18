@@ -4,7 +4,7 @@ namespace Elements_Reloaded
     public class Gameplay
     {
         private Hero _hero;
-        private string[] _levelElementOrder;
+        private static string[] _levelElementOrder;
         public static int CurrentLevel { get; set; } = 1;
 
         public Gameplay()
@@ -18,12 +18,12 @@ namespace Elements_Reloaded
             while (CurrentLevel < 10)
             {
                 //Level level = new Level(CurrentLevel);
-                Level.PlayLevel(_getLevelElement());
+                Level.PlayLevel(CurrentLevel);
                 //shop here
             }
         }
 
-        private string _getLevelElement()
+        public static string GetLevelElement()
         {
             return _levelElementOrder[CurrentLevel - 1];
         }
