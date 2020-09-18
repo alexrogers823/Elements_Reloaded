@@ -3,29 +3,30 @@ namespace Elements_Reloaded
 {
     public class Level
     {
-        public static int CurrentLevel { get; set; } = 1;
+        
         public static int NumberOfEnemies { get; set; } = 5;
+        private static string _levelElement = "Fire";
 
         public Level()
         {
         }
 
-        public static void PlayLevel()
+        public static void PlayLevel(int level)
         {
             int i = 0;
-            string LevelName = GameDialogue.GetLevelName(CurrentLevel);
+            string LevelName = GameDialogue.GetLevelName(level);
 
             _introduceLevel();
 
             Console.WriteLine($"Welcome to the {LevelName}");
 
-            if (CurrentLevel == 10)
+            if (level == 10)
             {
                 Console.WriteLine("Final Stage Begin");
             }
             else
             {
-                Console.WriteLine($"Stage {CurrentLevel} Begin");
+                Console.WriteLine($"Stage {level} Begin");
             }
 
             Console.WriteLine($"Enemies: {NumberOfEnemies}");
@@ -46,21 +47,21 @@ namespace Elements_Reloaded
 
         private static void _introduceLevel()
         {
-            GameDialogue.GetLevelIntro(CurrentLevel);
+            GameDialogue.GetLevelIntro(Gameplay.CurrentLevel);
         }
 
         private static Enemy _sendEnemy()
         {
-            string EnemyName = GameController.GetEnemyName(elementType, false);
+            string EnemyName = GameController.GetEnemyName(_levelElement, false);
             Console.WriteLine(GameDialogue.GetEnemyIntro());
-            return new Enemy(EnemyName, elementType);
+            return new Enemy(EnemyName, _levelElement);
         }
 
-        private static void _sendBoss()
+        private static Enemy _sendBoss()
         {
-            string BossName = GameController.GetEnemyName(elementType, true);
+            string BossName = GameController.GetEnemyName(_levelElement, true);
             Console.WriteLine($"You did good, but now...here comes the boss, {}!");
-            return new Enemy(BossName, elementType, true);
+            return new Enemy(BossName, _levelElement, true);
         }
 
         private static void _clearLevel()
@@ -74,7 +75,7 @@ namespace Elements_Reloaded
 
         private static void _incrementLevelNumber()
         {
-            CurrentLevel++;
+            Gameplay.CurrentLevel++;
         }
 
     }
