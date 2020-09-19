@@ -50,9 +50,25 @@ namespace Elements_Reloaded
 
         public int Attack()
         {
-            string selectedAttack = this._basicAttack;
+            string selectedAttack = this._inputAttack();
             base.Attack(selectedAttack);
             return _attackPoints;
+        }
+
+        private string _inputAttack()
+        {
+            string[] ListOfValidAttacks = new string[4]; //Change this later since you don't know how many attacks
+            ListOfValidAttacks[0] = _basicAttack;
+            ListOfValidAttacks[1] = WeaponAttack;
+
+            Console.WriteLine("Choose your attack");
+            for (int i = 0; i < ListOfValidAttacks.Length; i++)
+            {
+                Console.WriteLine($"{i}: {ListOfValidAttacks[i]}");
+            }
+
+            return Console.ReadLine();
+
         }
 
         public void DefeatEnemy(Enemy enemy)

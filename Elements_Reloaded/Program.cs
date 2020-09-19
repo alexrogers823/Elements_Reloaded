@@ -16,10 +16,8 @@ namespace Elements_Reloaded
             Console.WriteLine(String.Format("{0} ELEMENTS {0}", String.Concat(Enumerable.Repeat("-", 10))));
             Console.WriteLine("An RPG game on the four powers of life");
 
-            Gameplay.Start();
-
-            Level level = new Level(hero);
-
+            Gameplay gameplay = new Gameplay();
+            gameplay.Start();
         }
     }
 }
