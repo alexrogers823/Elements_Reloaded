@@ -36,11 +36,13 @@ namespace Elements_Reloaded
             {
                 Enemy enemy = _sendEnemy();
                 // battle enemy
+                Gameplay.Battle(Gameplay._hero, enemy);
 
                 // check if hero died. if so, end game. If not, increment i
             }
 
-            _sendBoss();
+            Enemy boss = _sendBoss();
+            Gameplay.Battle(Gameplay._hero, boss);
             // check if hero died. if so, end game. If not, clear level
 
             _clearLevel();

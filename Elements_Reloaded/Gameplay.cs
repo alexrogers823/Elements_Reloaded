@@ -3,7 +3,7 @@ namespace Elements_Reloaded
 {
     public class Gameplay
     {
-        private Hero _hero;
+        public static Hero _hero { get; private set; }
         private static string[] _levelElementOrder;
         public static int CurrentLevel { get; set; } = 1;
 
