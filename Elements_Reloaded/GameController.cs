@@ -42,9 +42,12 @@ namespace Elements_Reloaded
                 }
             };
 
-        public static string GetEnemyName(string elementType, bool isBoss)
+        public static string GetEnemyName(string elementType, int level, bool isBoss)
         {
-            return _elementMap[elementType]["Enemies"][figure out this index];
+            int levelIndex = (level > 5) ? 1 : 0;
+            if (isBoss) { levelIndex += 2; };
+
+            return _elementMap[elementType]["Enemies"][levelIndex];
         }
 
 

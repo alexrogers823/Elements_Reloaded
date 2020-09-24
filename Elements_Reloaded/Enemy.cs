@@ -37,5 +37,6 @@ namespace Elements_Reloaded
             object[] selectedAttack = _getRandomAttack();
             base.Attack((string)selectedAttack[0]);
             return (int)selectedAttack[1];
+        }
     }
 }
