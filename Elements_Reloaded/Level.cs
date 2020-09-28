@@ -15,7 +15,15 @@ namespace Elements_Reloaded
 
         public static void PlayLevel(int level)
         {
-            _setLevel(level);
+            if (level == 8 || level == 10)
+            {
+                _setLevel(level, true);
+            }
+            else
+            {
+                _setLevel(level);
+            }
+
             string LevelName = GameDialogue.GetLevelName(level);
             int i = 0;
 
@@ -53,6 +61,15 @@ namespace Elements_Reloaded
         private static void _setLevel(int level)
         {
             _levelElement = Gameplay.GetLevelElement();
+            Console.WriteLine($"DEBUG: Level element set as {_levelElement}");
+            _minionName = GameController.GetEnemyName(_levelElement, level, false);
+            _bossName = GameController.GetEnemyName(_levelElement, level, true);
+        }
+
+        private static void _setLevel(int level, bool isSpecialLevel)
+        {
+            _levelElement = Gameplay.GetLevelElement();
+            Console.WriteLine($"DEBUG: Level element set as {_levelElement}");
             _minionName = GameController.GetEnemyName(_levelElement, level, false);
             _bossName = GameController.GetEnemyName(_levelElement, level, true);
         }

@@ -10,13 +10,17 @@ namespace Elements_Reloaded
         public Gameplay()
         {
             _hero = GameController.CreateHero();
+            Console.WriteLine($"DEBUG: {_hero.ElementType} going into ArrangeLevels...");
             _levelElementOrder = GameController.ArrangeLevels(_hero.ElementType);
+            Console.WriteLine($"DEBUG: {_levelElementOrder}");
+            Console.WriteLine($"DEBUG: Leaving Gameplay constructor as {_hero.ElementType}");
         }
 
         public void Start()
         {
             while (CurrentLevel < 10)
             {
+                Console.WriteLine($"DEBUG: Starting first level with {_hero.ElementType}");
                 //Level level = new Level(CurrentLevel);
                 Level.PlayLevel(CurrentLevel);
                 //shop here
@@ -25,7 +29,22 @@ namespace Elements_Reloaded
 
         public static string GetLevelElement()
         {
-            return _levelElementOrder[CurrentLevel - 1];
+            string[] ElementOrder = GameController.ArrangeElementOrder(_hero.ElementType);
+            if (CurrentLevel == 8 || CurrentLevel == 10)
+            {
+                return null;
+            }
+            else if (CurrentLevel == 9)
+            {
+                return ElementOrder[ElementOrder.Length-1];
+            }
+            else
+            {
+                int ElementIndex = (CurrentLevel % ElementOrder.Length) - 1;
+                return ElementOrder[ElementIndex];
+            }
+
+
         }
 
         public static void Battle(Hero goodguy, Enemy badguy)

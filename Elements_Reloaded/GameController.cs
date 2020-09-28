@@ -54,7 +54,23 @@ namespace Elements_Reloaded
         public static string[] ArrangeLevels(string elementType)
         {
             List<string> LevelOrderList = new List<string>();
+            string[] ElementOrder = ArrangeElementOrder(elementType);
+
+            for (int i = 0; i < (ElementOrder.Length * 2); i++)
+            {
+                int LevelIndex = (i > 3) ? 1 : 0;
+                int ElementIndex = (i > 3) ? i - 4 : i;
+                LevelOrderList.Add(_elementMap[ElementOrder[ElementIndex]]["Levels"][LevelIndex]);
+            }
+
+            return LevelOrderList.ToArray();
+        }
+
+        public static string[] ArrangeElementOrder(string elementType)
+        {
             string[] ElementOrder = null;
+
+            Console.WriteLine($"DEBUG: {elementType} passed into ArrangeElementOrder");
 
             if (elementType == "Water")
             {
@@ -66,21 +82,20 @@ namespace Elements_Reloaded
             }
             else if (elementType == "Fire")
             {
+                Console.WriteLine($"DEBUG: Setting element order based on {elementType}");
                 ElementOrder = new string[4] { "Earth", "Air", "Fire", "Water" };
             }
             else if (elementType == "Air")
             {
                 ElementOrder = new string[4] { "Fire", "Water", "Air", "Earth" };
             }
-
-            for (int i = 0; i < (ElementOrder.Length * 2); i++)
+            else
             {
-                int LevelIndex = (i > 3) ? 1 : 0;
-                int Index = (i > 3) ? i - 4 : i;
-                LevelOrderList.Add(_elementMap[ElementOrder[Index]]["Levels"][LevelIndex]);
+                Console.WriteLine($"Invalid Element: {elementType} not a part of list");
             }
 
-            return LevelOrderList.ToArray();
+            return ElementOrder;
+
         }
 
         public static Hero CreateHero()
@@ -94,7 +109,7 @@ namespace Elements_Reloaded
             Console.WriteLine("Your hero needs a name...");
             string Name = Console.ReadLine();
 
-            Console.WriteLine($"Creating hero {Name}...");
+            Console.WriteLine($"Creating {SelectedElement} type hero {Name}...");
 
             return new Hero(Name, SelectedElement);
         }
