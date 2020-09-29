@@ -3,8 +3,8 @@ namespace Elements_Reloaded
 {
     public class Enemy : Player
     {
-        protected virtual string LowAttack { get; set; } = "Example Low Attack";
-        protected virtual string HighAttack { get; set; } = "Example High Attack";
+        protected virtual string LowAttack { get; set; }
+        protected virtual string HighAttack { get; set; }
         protected virtual int LowBaseDamage { get; set; } = 20;
         protected virtual int HighBaseDamage { get; set; } = 30;
         public bool IsBoss { get; private set; } = false;
@@ -13,6 +13,8 @@ namespace Elements_Reloaded
             base(name, elementType)
         {
             LifePoints = 70;
+            LowAttack = ElementInfo.GetLowAttack(elementType, false);
+            HighAttack = ElementInfo.GetHighAttack(elementType, false);
         }
 
         public Enemy(string name, string elementType, bool isBoss) :
@@ -20,6 +22,8 @@ namespace Elements_Reloaded
         {
             IsBoss = isBoss;
             LifePoints = isBoss ? 100 : 70;
+            LowAttack = ElementInfo.GetLowAttack(elementType, true);
+            HighAttack = ElementInfo.GetHighAttack(elementType, true);
         }
 
         private dynamic[] _getRandomAttack()
@@ -28,9 +32,6 @@ namespace Elements_Reloaded
             AttackList[0] = new dynamic[2] { LowAttack, LowBaseDamage };
             AttackList[1] = new dynamic[2] { HighAttack, HighBaseDamage };
 
-            Console.WriteLine($"DEBUG: First one: {AttackList[0][0]}");
-            Console.WriteLine($"DEBUG: Second one: {AttackList[1]}");
-
             int RandIndex = new Random().Next(AttackList.Length);
             return AttackList[RandIndex];
         }
@@ -38,8 +39,6 @@ namespace Elements_Reloaded
         public int Attack()
         {
             dynamic[] selectedAttack = _getRandomAttack();
-            Console.WriteLine($"DEBUG: selectedAttackdynamic {selectedAttack}");
-            Console.WriteLine($"DEBUG: selectedAttack {selectedAttack[0]}");
             base.Attack((string)selectedAttack[0]);
             return (int)selectedAttack[1];
         }
