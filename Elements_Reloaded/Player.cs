@@ -35,7 +35,7 @@ namespace Elements_Reloaded
         {
             Console.WriteLine(
                 $"{this.Name}: {this.ElementType} Type," +
-                $" {this.LifePoints}");
+                $" LP: {this.LifePoints}");
         }
     }
 }

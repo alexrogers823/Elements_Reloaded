@@ -31,9 +31,7 @@ namespace Elements_Reloaded
         {
             Console.WriteLine(
                 $"{this.Name}: {this.ElementType} Type," +
-                $" {this.LifePoints}, {this._magicPoints}" +
-                $" {this._attackPoints}, {this._basicAttack}" +
-                $" {this.HasWeapon}, {this.WeaponAttack}");
+                $" LP: {this.LifePoints}, MP: {this._magicPoints}");
         }
 
         public void AcquireItem(string item)
@@ -67,7 +65,9 @@ namespace Elements_Reloaded
                 Console.WriteLine($"{i}: {ListOfValidAttacks[i]}");
             }
 
-            return Console.ReadLine();
+            int attackNumber = Convert.ToInt32(Console.ReadLine());
+
+            return ListOfValidAttacks[attackNumber];
 
         }
 

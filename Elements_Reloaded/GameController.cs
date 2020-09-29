@@ -70,8 +70,6 @@ namespace Elements_Reloaded
         {
             string[] ElementOrder = null;
 
-            Console.WriteLine($"DEBUG: {elementType} passed into ArrangeElementOrder");
-
             if (elementType == "Water")
             {
                 ElementOrder = new string[4] { "Air", "Earth", "Water", "Fire" };
@@ -82,7 +80,6 @@ namespace Elements_Reloaded
             }
             else if (elementType == "Fire")
             {
-                Console.WriteLine($"DEBUG: Setting element order based on {elementType}");
                 ElementOrder = new string[4] { "Earth", "Air", "Fire", "Water" };
             }
             else if (elementType == "Air")

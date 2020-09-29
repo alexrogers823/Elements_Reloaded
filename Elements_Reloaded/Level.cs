@@ -61,7 +61,6 @@ namespace Elements_Reloaded
         private static void _setLevel(int level)
         {
             _levelElement = Gameplay.GetLevelElement();
-            Console.WriteLine($"DEBUG: Level element set as {_levelElement}");
             _minionName = GameController.GetEnemyName(_levelElement, level, false);
             _bossName = GameController.GetEnemyName(_levelElement, level, true);
         }
@@ -69,7 +68,6 @@ namespace Elements_Reloaded
         private static void _setLevel(int level, bool isSpecialLevel)
         {
             _levelElement = Gameplay.GetLevelElement();
-            Console.WriteLine($"DEBUG: Level element set as {_levelElement}");
             _minionName = GameController.GetEnemyName(_levelElement, level, false);
             _bossName = GameController.GetEnemyName(_levelElement, level, true);
         }
@@ -81,7 +79,7 @@ namespace Elements_Reloaded
 
         private static Enemy _sendEnemy()
         {
-            Console.WriteLine(GameDialogue.GetEnemyIntro());
+            Console.WriteLine(String.Format(GameDialogue.GetEnemyIntro(), _minionName));
             return new Enemy(_minionName, _levelElement);
         }
 

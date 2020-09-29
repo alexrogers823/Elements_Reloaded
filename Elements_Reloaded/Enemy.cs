@@ -22,11 +22,14 @@ namespace Elements_Reloaded
             LifePoints = isBoss ? 100 : 70;
         }
 
-        private object[] _getRandomAttack()
+        private Object[] _getRandomAttack()
         {
-            object[][] AttackList = new object[2][];
-            AttackList[0] = new object[2] { LowAttack, LowBaseDamage };
-            AttackList[1] = new object[2] { HighAttack, HighBaseDamage };
+            Object[][] AttackList = new Object[2][];
+            AttackList[0] = new Object[2] { LowAttack, LowBaseDamage };
+            AttackList[1] = new Object[2] { HighAttack, HighBaseDamage };
+
+            Console.WriteLine($"DEBUG: First one: {AttackList[0][0]}");
+            Console.WriteLine($"DEBUG: Second one: {AttackList[1]}");
 
             int RandIndex = new Random().Next(AttackList.Length);
             return AttackList[RandIndex];
@@ -34,7 +37,9 @@ namespace Elements_Reloaded
 
         public int Attack()
         {
-            object[] selectedAttack = _getRandomAttack();
+            Object[] selectedAttack = _getRandomAttack();
+            Console.WriteLine($"DEBUG: selectedAttackObject {selectedAttack}");
+            Console.WriteLine($"DEBUG: selectedAttack {selectedAttack[0]}");
             base.Attack((string)selectedAttack[0]);
             return (int)selectedAttack[1];
         }
