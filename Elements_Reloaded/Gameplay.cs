@@ -44,6 +44,11 @@ namespace Elements_Reloaded
 
         }
 
+        public static string GetHeroElementType()
+        {
+            return _hero.ElementType;
+        }
+
         public static void Battle(Hero goodguy, Enemy badguy)
         {
             int damage;
