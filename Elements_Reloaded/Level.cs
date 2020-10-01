@@ -24,8 +24,8 @@ namespace Elements_Reloaded
                 _setLevel(level);
             }
 
-            string LevelName = GameDialogue.GetLevelName(level);
-            int i = 0;
+            string LevelName = GameController.GetLevelName(level);
+            int LevelEnemiesKilled = 0;
 
             _introduceLevel();
 
@@ -42,20 +42,35 @@ namespace Elements_Reloaded
 
             Console.WriteLine($"Enemies: {NumberOfEnemies}");
 
-            while (i < NumberOfEnemies)
+            while (LevelEnemiesKilled < NumberOfEnemies)
             {
                 Enemy enemy = _sendEnemy();
                 // battle enemy
                 Gameplay.Battle(Gameplay._hero, enemy);
 
                 // check if hero died. if so, end game. If not, increment i
+                if (Gameplay._hero.LifePoints < 0)
+                {
+                    break; // TODO: Replace with an actual method to end game
+                }
+                else
+                {
+                    LevelEnemiesKilled++;
+                }
             }
 
             Enemy boss = _sendBoss();
             Gameplay.Battle(Gameplay._hero, boss);
             // check if hero died. if so, end game. If not, clear level
+            if (Gameplay._hero.LifePoints < 0)
+            {
+                Console.WriteLine($"You lost"); // TODO: Replace with actual method
+            }
+            else
+            {
+                _clearLevel(boss);
+            }
 
-            _clearLevel(boss);
         }
 
         private static void _setLevel(int level)
