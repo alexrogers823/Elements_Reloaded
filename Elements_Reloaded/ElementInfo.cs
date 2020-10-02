@@ -160,5 +160,81 @@ namespace Elements_Reloaded
             return isBoss ? Attacks[element]["Boss"]
                 : Attacks[element]["Minion"];
         }
+
+        public static string GetEnemyByElement(string element, int index)
+        {
+            Dictionary<string, Dictionary<string, string[]>> ElementMap =
+            new Dictionary<string, Dictionary<string, string[]>>
+            {
+                {
+                    "Water",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Enemies", new string[] {"Whitewater Sage", "Sr. Whitewater Sage", "Oceanic Prince", "Oceanic King"} }
+                    }
+                },
+                {
+                    "Earth",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Enemies", new string[] {"Geo Wrangler", "Geo Champion", "Earth Emperor", "Earth God"} }
+                    }
+                },
+                {
+                    "Fire",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Enemies", new string[] {"Blazed Knight", "Blazed Bishop", "Scorched Lieutenant", "Scorched General"} }
+                    }
+                },
+                {
+                    "Air",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Enemies", new string[] {"Wind Sorceror", "Advanced Wind Sorcerer", "Wind Keeper", "Wind Master"} }
+                    }
+                }
+            };
+
+            return ElementMap[element]["Enemies"][index];
+        }
+
+        public static string GetLevelByElement(string element, int index)
+        {
+            Dictionary<string, Dictionary<string, string[]>> ElementMap =
+            new Dictionary<string, Dictionary<string, string[]>>
+            {
+                {
+                    "Water",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Levels", new string[] {"Symbolic Ocean", "Aquatic Sanctuary" } },
+                    }
+                },
+                {
+                    "Earth",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Levels", new string[] {"High Ground", "Cave of Wonder"} },
+                    }
+                },
+                {
+                    "Fire",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Levels", new string[] {"Pyrocity", "Flaming Desert"} },
+                    }
+                },
+                {
+                    "Air",
+                    new Dictionary<string, string[]>
+                    {
+                        { "Levels", new string[] {"Windy Bridge", "Floating Sky"} },
+                    }
+                }
+            };
+
+            return ElementMap[element]["Levels"][index];
+        }
     }
 }

@@ -5,49 +5,35 @@ namespace Elements_Reloaded
 {
     public class GameController
     {
-        private static readonly Dictionary<string, Dictionary<string, string[]>> _elementMap =
-            new Dictionary<string, Dictionary<string, string[]>>
-            {
+        //private static string[] _levelOrder = ArrangeLevels(Gameplay.GetHeroElementType());
+        private static string[] _levelOrder = ArrangeLevels("Water");
+
+        public static string GetLevelName(int level)
+        {
+            Dictionary<int, string> LevelNames =
+                new Dictionary<int, string>
                 {
-                    "Water",
-                    new Dictionary<string, string[]>
-                    {
-                        { "Levels", new string[] {"Symbolic Ocean", "Aquatic Sanctuary" } },
-                        { "Enemies", new string[] {"Whitewater Sage", "Sr. Whitewater Sage", "Oceanic Prince", "Oceanic King"} }
-                    }
-                },
-                {
-                    "Earth",
-                    new Dictionary<string, string[]>
-                    {
-                        { "Levels", new string[] {"High Ground", "Cave of Wonder"} },
-                        { "Enemies", new string[] {"Geo Wrangler", "Geo Champion", "Earth Emperor", "Earth God"} }
-                    }
-                },
-                {
-                    "Fire",
-                    new Dictionary<string, string[]>
-                    {
-                        { "Levels", new string[] {"Pyrocity", "Flaming Desert"} },
-                        { "Enemies", new string[] {"Blazed Knight", "Blazed Bishop", "Scorched Lieutenant", "Scorched General"} }
-                    }
-                },
-                {
-                    "Air",
-                    new Dictionary<string, string[]>
-                    {
-                        { "Levels", new string[] {"Windy Bridge", "Floating Sky"} },
-                        { "Enemies", new string[] {"Wind Sorceror", "Advanced Wind Sorcerer", "Wind Keeper", "Wind Master"} }
-                    }
-                }
-            };
+                    { 1, _levelOrder[0] },
+                    { 2, _levelOrder[1] },
+                    { 3, _levelOrder[2] },
+                    { 4, _levelOrder[3] },
+                    { 5, _levelOrder[4] },
+                    { 6, _levelOrder[5] },
+                    { 7, _levelOrder[6] },
+                    { 8, "Lightning Tower" },
+                    { 9, _levelOrder[7] },
+                    { 10, "Element Dimension" },
+                };
+
+            return LevelNames[level];
+        }
 
         public static string GetEnemyName(string elementType, int level, bool isBoss)
         {
             int levelIndex = (level > 5) ? 1 : 0;
             if (isBoss) { levelIndex += 2; };
 
-            return _elementMap[elementType]["Enemies"][levelIndex];
+            return ElementInfo.GetEnemyByElement(elementType, levelIndex);
         }
 
 
@@ -60,7 +46,11 @@ namespace Elements_Reloaded
             {
                 int LevelIndex = (i > 3) ? 1 : 0;
                 int ElementIndex = (i > 3) ? i - 4 : i;
-                LevelOrderList.Add(_elementMap[ElementOrder[ElementIndex]]["Levels"][LevelIndex]);
+                Console.WriteLine($"DEBUG: Making level {i + 1}");
+                Console.WriteLine($"DEBUG: Level order list -- {LevelOrderList}");
+
+                Console.WriteLine($"DEBUG: Selected level -- {ElementInfo.GetLevelByElement(elementType, LevelIndex)}");
+                LevelOrderList.Add(ElementInfo.GetLevelByElement(elementType, LevelIndex));
             }
 
             return LevelOrderList.ToArray();

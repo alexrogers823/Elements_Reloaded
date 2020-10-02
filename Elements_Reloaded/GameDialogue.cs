@@ -5,28 +5,10 @@ namespace Elements_Reloaded
 {
     public static class GameDialogue
     {
-        private static readonly string[] _levelOrder = GameController.ArrangeLevels("Water");
+        
         private static readonly Random random = new Random();
 
-        public static string GetLevelName(int level)
-        {
-            Dictionary<int, string> LevelNames =
-                new Dictionary<int, string>
-                {
-                    { 1, _levelOrder[0] },
-                    { 2, _levelOrder[1] },
-                    { 3, _levelOrder[2] },
-                    { 4, _levelOrder[3] },
-                    { 5, _levelOrder[4] },
-                    { 6, _levelOrder[5] },
-                    { 7, _levelOrder[6] },
-                    { 8, "Lightning Tower" },
-                    { 9, _levelOrder[7] },
-                    { 10, "Element Dimension" },
-                };
-
-            return LevelNames[level];
-        }
+        
 
         public static string GetEnemyIntro()
         {

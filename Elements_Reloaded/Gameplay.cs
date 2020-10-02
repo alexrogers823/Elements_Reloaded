@@ -14,6 +14,11 @@ namespace Elements_Reloaded
             _levelElementOrder = GameController.ArrangeLevels(_hero.ElementType);
         }
 
+        private void _modifyGameplaySettings()
+        {
+            //where hero replenish and enemy damage are altered 
+        }
+
         public void Start()
         {
             while (CurrentLevel < 10)
