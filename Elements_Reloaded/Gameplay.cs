@@ -21,7 +21,7 @@ namespace Elements_Reloaded
 
         public void Start()
         {
-            while (CurrentLevel < 10)
+            while (CurrentLevel < 10 && _hero.LifePoints > 0)
             {
                 //Level level = new Level(CurrentLevel);
                 Level.PlayLevel(CurrentLevel);
@@ -42,7 +42,7 @@ namespace Elements_Reloaded
             }
             else
             {
-                int ElementIndex = (CurrentLevel % ElementOrder.Length) - 1;
+                int ElementIndex = (CurrentLevel - 1) % ElementOrder.Length;
                 return ElementOrder[ElementIndex];
             }
 

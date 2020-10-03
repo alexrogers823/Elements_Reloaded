@@ -46,10 +46,7 @@ namespace Elements_Reloaded
             {
                 int LevelIndex = (i > 3) ? 1 : 0;
                 int ElementIndex = (i > 3) ? i - 4 : i;
-                Console.WriteLine($"DEBUG: Making level {i + 1}");
-                Console.WriteLine($"DEBUG: Level order list -- {LevelOrderList}");
 
-                Console.WriteLine($"DEBUG: Selected level -- {ElementInfo.GetLevelByElement(elementType, LevelIndex)}");
                 LevelOrderList.Add(ElementInfo.GetLevelByElement(elementType, LevelIndex));
             }
 
