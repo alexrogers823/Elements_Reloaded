@@ -51,7 +51,7 @@ namespace Elements_Reloaded
                 // check if hero died. if so, end game. If not, increment i
                 if (Gameplay._hero.LifePoints < 0)
                 {
-                    break; // TODO: Replace with an actual method to end game
+                    Gameplay.EndGame();
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace Elements_Reloaded
             // check if hero died. if so, end game. If not, clear level
             if (Gameplay._hero.LifePoints < 0)
             {
-                Console.WriteLine($"You lost"); // TODO: Replace with actual method
+                Gameplay.EndGame();
             }
             else
             {

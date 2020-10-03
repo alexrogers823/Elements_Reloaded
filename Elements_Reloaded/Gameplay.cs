@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+
 namespace Elements_Reloaded
 {
     public class Gameplay
@@ -68,6 +69,12 @@ namespace Elements_Reloaded
                     goodguy.TakeDamage(damage);
                 }
             }
+        }
+
+        public static void EndGame()
+        {
+            Console.WriteLine("Game over");
+            Environment.Exit(0);
         }
 
         private static void _displayBattleStats(Hero goodguy, Enemy badguy)
