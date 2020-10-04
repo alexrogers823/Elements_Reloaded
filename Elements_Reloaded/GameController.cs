@@ -5,8 +5,8 @@ namespace Elements_Reloaded
 {
     public class GameController
     {
-        //private static string[] _levelOrder = ArrangeLevels(Gameplay.GetHeroElementType());
-        private static string[] _levelOrder = ArrangeLevels("Water");
+        private static string[] _levelOrder = ArrangeLevels(Gameplay.GetHeroElementType());
+        //private static string[] _levelOrder = ArrangeLevels("Water");
 
         public static string GetLevelName(int level)
         {
@@ -47,7 +47,7 @@ namespace Elements_Reloaded
                 int LevelIndex = (i > 3) ? 1 : 0;
                 int ElementIndex = (i > 3) ? i - 4 : i;
 
-                LevelOrderList.Add(ElementInfo.GetLevelByElement(elementType, LevelIndex));
+                LevelOrderList.Add(ElementInfo.GetLevelByElement(ElementOrder[ElementIndex], LevelIndex));
             }
 
             return LevelOrderList.ToArray();
