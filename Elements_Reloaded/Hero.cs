@@ -62,7 +62,10 @@ namespace Elements_Reloaded
             Console.WriteLine("Choose your attack");
             for (int i = 0; i < ListOfValidAttacks.Length; i++)
             {
-                Console.WriteLine($"{i}: {ListOfValidAttacks[i]}");
+                if (ListOfValidAttacks[i] != null)
+                {
+                    Console.WriteLine($"{i}: {ListOfValidAttacks[i]}");
+                }
             }
 
             int attackNumber = Convert.ToInt32(Console.ReadLine());
