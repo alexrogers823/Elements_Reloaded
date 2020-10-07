@@ -89,7 +89,9 @@ namespace Elements_Reloaded
 
         private static void _introduceLevel()
         {
-            GameDialogue.GetLevelIntro(Gameplay.CurrentLevel);
+            Console.WriteLine(String.Format(GameDialogue.GetLevelIntro(Gameplay.CurrentLevel), Gameplay._hero.Name));
+            Console.Write("Press ENTER to continue");
+            Console.ReadLine();
         }
 
         private static Enemy _sendEnemy()

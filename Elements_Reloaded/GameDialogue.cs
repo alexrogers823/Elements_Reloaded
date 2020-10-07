@@ -31,12 +31,12 @@ namespace Elements_Reloaded
             string[] IntroDialogue = new string[]
             {
                 "Long ago, the world was balanced by the elemental" +
-                "forces that were bestowed, in equal strength and harmony." +
-                "But an evil entity took advantage of such strengths and " +
+                " forces that were bestowed, in equal strength and harmony." +
+                " But an evil entity took advantage of such strengths and " +
                 "created chaos, unleashing havoc by corrupting the guardians" +
-                "of the elements and the ones who serve them." +
+                " of the elements and the ones who serve them. " +
                 "Now, it is up to {0} to restore order, and bring an end to great" +
-                "evil once and for all...",
+                " evil once and for all...",
 
                 "'My friends have been corrupted!' {0} realized. There was something" +
                 "wrong with them. Never had other tribes been so hostile to each other." +
