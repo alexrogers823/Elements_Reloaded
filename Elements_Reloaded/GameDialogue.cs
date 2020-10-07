@@ -38,10 +38,10 @@ namespace Elements_Reloaded
                 "Now, it is up to {0} to restore order, and bring an end to great" +
                 " evil once and for all...",
 
-                "'My friends have been corrupted!' {0} realized. There was something" +
-                "wrong with them. Never had other tribes been so hostile to each other." +
-                "Not for centuries. 'There must be something in the air,' the warrior" +
-                "thought, 'or the way the stars have aligned.' Confused, and determined" +
+                "'My friends have been corrupted!' {0} realized. There was something " +
+                "wrong with them. Never had other tribes been so hostile to each other. " +
+                "Not for centuries. 'There must be something in the air,' the warrior " +
+                "thought, 'or the way the stars have aligned.' Confused, and determined " +
                 "to seek the issue, they carried on...",
 
                 "'This seems odd', {0} said. The approaching area felt so familiar." +

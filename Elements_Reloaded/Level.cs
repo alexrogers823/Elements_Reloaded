@@ -68,7 +68,7 @@ namespace Elements_Reloaded
             }
             else
             {
-                _clearLevel(boss);
+                _clearLevel();
             }
 
         }
@@ -108,7 +108,7 @@ namespace Elements_Reloaded
 
         private static void _clearLevel(Enemy Boss)
         {
-            Console.WriteLine($"{Boss} is defeated! You beat the level!");
+            Console.WriteLine($"{_bossName} is defeated! You beat the level!");
             // Coins += 75
             // XP += 50
             _incrementLevelNumber();
