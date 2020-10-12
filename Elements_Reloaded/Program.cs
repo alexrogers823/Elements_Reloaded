@@ -12,7 +12,7 @@ namespace Elements_Reloaded
             Console.WriteLine("An RPG game on the four powers of life");
 
             Gameplay gameplay = new Gameplay();
-            gameplay.Start();
+            gameplay.PlayGame();
         }
     }
 }

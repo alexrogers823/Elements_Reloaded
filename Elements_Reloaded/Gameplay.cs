@@ -20,14 +20,23 @@ namespace Elements_Reloaded
             //where hero replenish and enemy damage are altered 
         }
 
-        public void Start()
+        public void PlayGame()
         {
             while (CurrentLevel < 10 && _hero.LifePoints > 0)
             {
-                //Level level = new Level(CurrentLevel);
-                Level.PlayLevel(CurrentLevel);
-                //shop here
+                StartLevel();
+                VisitShop();
             }
+        }
+
+        public void StartLevel()
+        {
+            Level.PlayLevel(CurrentLevel);
+        }
+
+        public void VisitShop()
+        {
+
         }
 
         public static string GetLevelElement()
