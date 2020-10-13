@@ -36,7 +36,12 @@ namespace Elements_Reloaded
 
         public void VisitShop()
         {
-
+            Console.WriteLine("Welcome to the shop!\nChoose from our options here.");
+            while (Console.ReadLine() != 'done')
+            {
+                Shop.DisplayEligibleContent();
+            }
+            // Will go to next level when user enters 'done'
         }
 
         public static string GetLevelElement()
