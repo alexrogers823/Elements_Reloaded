@@ -7,7 +7,7 @@ namespace Elements_Reloaded
     {
         public static Hero _hero { get; private set; }
         private static string[] _levelElementOrder;
-        public static int CurrentLevel { get; set; } = 1;
+        private static int _currentLevel { get; set; } = 1;
 
         public Gameplay()
         {
@@ -22,22 +22,23 @@ namespace Elements_Reloaded
 
         public void PlayGame()
         {
-            while (CurrentLevel < 10 && _hero.LifePoints > 0)
+            while (_currentLevel < 10 && _hero.LifePoints > 0)
             {
                 StartLevel();
                 VisitShop();
+                _incrementLevelNumber();
             }
         }
 
         public void StartLevel()
         {
-            Level.PlayLevel(CurrentLevel);
+            Level.PlayLevel(_currentLevel);
         }
 
         public void VisitShop()
         {
             Console.WriteLine("Welcome to the shop!\nChoose from our options here.");
-            while (Console.ReadLine() != 'done')
+            while (Console.ReadLine() != "done")
             {
                 Shop.DisplayEligibleContent();
             }
@@ -47,17 +48,17 @@ namespace Elements_Reloaded
         public static string GetLevelElement()
         {
             string[] ElementOrder = GameController.ArrangeElementOrder(_hero.ElementType);
-            if (CurrentLevel == 8 || CurrentLevel == 10)
+            if (_currentLevel == 8 || _currentLevel == 10)
             {
                 return null;
             }
-            else if (CurrentLevel == 9)
+            else if (_currentLevel == 9)
             {
                 return ElementOrder[ElementOrder.Length-1];
             }
             else
             {
-                int ElementIndex = (CurrentLevel - 1) % ElementOrder.Length;
+                int ElementIndex = (_currentLevel - 1) % ElementOrder.Length;
                 return ElementOrder[ElementIndex];
             }
 
@@ -67,6 +68,11 @@ namespace Elements_Reloaded
         public static string GetHeroElementType()
         {
             return _hero.ElementType;
+        }
+
+        private static void _incrementLevelNumber()
+        {
+            _currentLevel++;
         }
 
         public static void Battle(Hero goodguy, Enemy badguy)

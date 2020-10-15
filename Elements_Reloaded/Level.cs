@@ -27,7 +27,7 @@ namespace Elements_Reloaded
             string LevelName = GameController.GetLevelName(level);
             int LevelEnemiesKilled = 0;
 
-            _introduceLevel();
+            _introduceLevel(level);
 
             Console.WriteLine($"Welcome to the {LevelName}");
 
@@ -87,9 +87,9 @@ namespace Elements_Reloaded
             _bossName = GameController.GetEnemyName(_levelElement, level, true);
         }
 
-        private static void _introduceLevel()
+        private static void _introduceLevel(int level)
         {
-            Console.WriteLine(String.Format(GameDialogue.GetLevelIntro(Gameplay.CurrentLevel), Gameplay._hero.Name));
+            Console.WriteLine(String.Format(GameDialogue.GetLevelIntro(level), Gameplay._hero.Name));
             Console.Write("Press ENTER to continue");
             Console.ReadLine();
         }
@@ -106,18 +106,12 @@ namespace Elements_Reloaded
             return new Enemy(_bossName, _levelElement, true);
         }
 
-        private static void _clearLevel(Enemy Boss)
+        private static void _clearLevel()
         {
             Console.WriteLine($"{_bossName} is defeated! You beat the level!");
             // Coins += 75
             // XP += 50
-            _incrementLevelNumber();
             // clear screen
-        }
-
-        private static void _incrementLevelNumber()
-        {
-            Gameplay.CurrentLevel++;
         }
 
     }
