@@ -49,7 +49,7 @@ namespace Elements_Reloaded
         public int Attack()
         {
             string selectedAttack = this._inputAttack();
-            base.Attack(selectedAttack);
+            base.Attack(selectedAttack, _attackPoints);
             return _attackPoints;
         }
 

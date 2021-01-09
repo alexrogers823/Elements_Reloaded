@@ -6,7 +6,7 @@ namespace Elements_Reloaded
         public static void BuyItem(string item)
         {
             // add item to hero inventory
-            Console.WriteLine($"{item.Name} added to inventory!");
+            //Console.WriteLine($"{item.Name} added to inventory!");
         }
 
         public static void DisplayEligibleContent()

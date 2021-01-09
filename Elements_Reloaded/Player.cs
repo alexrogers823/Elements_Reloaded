@@ -21,6 +21,11 @@ namespace Elements_Reloaded
             Console.WriteLine($"{this.Name} attacks with {attack}!");
         }
 
+        public void Attack(string attack, int attackPoints)
+        {
+            Console.WriteLine($"{this.Name} attacks with {attack}, causing {attackPoints} damage!");
+        }
+
         public void TakeDamage(int damage)
         {
             LifePoints -= damage;
